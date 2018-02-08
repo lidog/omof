@@ -1,0 +1,11 @@
+// UI规范
+@import "./standard.scss"; 
+
+// 重置样式
+@import "./reset.css";
+
+// 项目的基础样式
+@import "./base.scss";
+
+// 重写ui框架的样式
+@import "./eapui.scss";

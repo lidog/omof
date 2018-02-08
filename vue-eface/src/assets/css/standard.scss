@@ -1,0 +1,144 @@
+/*
+   定义UI规范：
+*/
+
+// 背景色
+$bgColor: #18223a;   // 主体背景色
+$cardBgColor: #253953; // 卡片背景色
+
+// 顶部bar高度
+$barHeight: 64px;
+$barBgcolor: #151523;
+
+//  字体大小
+$fontSizeMain: 12px;  //正文字体大小
+$fontSizeTitle: 13px;  // 文字标题大小
+$fontSizepageTitle: 18px;  // 页面级标题大小 (主标题）
+$fontSizeSubPageTitle: 16px;  // 文字标题大小（副标题)
+
+// 字体颜色
+$fontColor: #a2b6c8; // 字体颜色 (正文)
+$activeColor: #56baca; //高亮颜色
+$opcityFontColor: #363a42;  //字体颜色（暗色调）
+$cardfontColor: #5d858d;  //卡片字体颜色
+
+// 边框
+$borderColor: #403e55; //边框颜色
+
+// 搜索框颜色
+$searchFontColor: #5d858d; //文字
+$searchBorderColor: #416d7e;  // 边框
+
+// 统计图
+$chartFontColor: #99abb4;  // 图标坐标轴的文字颜色(正常)
+$chartFontColor: #56baca;  // 图标坐标轴的文字颜色 (高亮）
+
+// 侧边弹窗颜色
+$sidleAlertBgColor: #343545;  //背景
+$sidleAlertFontColor: #a2b6c8;
+
+// tilelist 列表
+$tilelistBgColor: #404255;  // 背景色
+$tileBorderColor: #525161; //边框颜色
+
+// 其他颜色
+$orangeColor: #ac3a17; // 橙色
+$tagColor: #56baca; // 筛选tag标签的高亮颜色
+
+//导航
+$navCloseWidth: 58px;  //收起的宽度
+$subMenuHeight: 40px;   // 展开的宽度
+
+
+// 规范函数
+//  底边框
+@mixin border-bottom-1px($color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-top: 1px solid $color;
+        content: ' ';
+    }
+}
+
+// 右边框
+@mixin border-right-1px($color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        border-right: 1px solid $color;
+        content: ' ';
+    }
+}
+
+// 上边框
+@mixin border-top-1px($color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        border-top: 1px solid $color;
+        content: ' ';
+    }
+}
+
+// 左边框
+@mixin border-left-1px($color){
+    position: relative;
+    &:after{
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        border-left: 1px solid $color;
+        content: ' ';
+    }
+}
+
+// 无底部边框
+@mixin border-none(){
+    &:after{
+        display: none;
+    }
+}
+
+@mixin border-1px($color){
+    position: relative;
+    border:none;
+    &:after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $color;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+      }
+}
+
+//get true pixels 输入设计稿的尺寸 得到实现尺寸
+@function p($number) {
+    @return $number / 2 * 1px;
+}
+
+
+// bg-image($url)
+//   background-image: url($url + "@2x.png")
+//   @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+//     background-image: url($url + "@3x.png")

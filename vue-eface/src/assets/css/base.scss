@@ -1,0 +1,153 @@
+@import "./standard.scss";
+.redColor {
+    color: red;
+}
+
+/* 公用类 start */
+
+.clearfix {
+    // display: inline-block;
+    &:after {
+        display: block;
+        content: ".";
+        height: 0;
+        line-height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+}
+
+li{
+    list-style: none;
+}
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.mb0 {
+    margin-bottom: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.disabled{
+    opacity: 0.5;
+	filter:alpha(opacity=50);
+    cursor: no-drop;
+}
+
+.fontWhite{
+    color: #fff;
+}
+
+// 阻止文字选中
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently not supported by any browser */
+}
+// 底部按钮
+.footer-btns-left,
+.footer-btns-right {
+    margin-top: 30px;
+    button {
+        // float: right;
+        &:not(:last-child) {
+            margin-left: 15px;
+        }
+    }
+}
+.footer-btns-left{
+    text-align: left;
+}
+.footer-btns-right{
+    text-align: right;
+}
+
+.w50{
+    width: 50%;
+}
+
+// 页面边距
+.warp-box{
+    padding: 20px;
+}
+
+// 背景图片
+.bg-mg{
+    background: url(../images/bg.png) $bgColor no-repeat center bottom !important ;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 316px;
+    z-index: 1;
+}
+
+// 页面主题内容距离
+.page-con{
+    z-index: 2;
+    padding: 28px 32px;
+}
+
+// 图标
+.icon-add,
+.icon-reload{
+    font-size: 17px;
+    margin-right: 4px;
+}
+
+
+/*  响应式 */
+// 1像素大小
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5){
+    .border-1px,
+    .border-bottom-1px,
+    .border-bottom-1px,
+    .border-right-1px,
+    .border-left-1px,
+    .border-top-1px{
+        &::after{
+            -webkit-transform: scaleY(0.7);
+            transform: scaleY(0.7);
+        }
+    }
+}
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
+    .border-1px,
+    .border-bottom-1px,
+    .border-right-1px,
+    .border-left-1px,
+    .border-top-1px{
+        &::after{
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+    }
+}
+
+
+//搜索页面 弹出动画
+.search-page-enter-active,.search-page-leave-active{
+    transition: all 0.5s;
+}
+.search-page-enter,.search-page-leave-to{
+    transform:translateX(p(1320)) ;
+    opacity: 0;
+}

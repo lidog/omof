@@ -1,0 +1,175 @@
+/* 复选框 */
+.el-checkbox__inner,
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-inde{
+    background: transparent;
+    border: 1px solid $activeColor;
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+}
+.el-checkbox__label,
+.el-checkbox__input.is-checked+.el-checkbox__label{
+    color:  $activeColor;
+}
+.el-checkbox__label{
+    padding-left: 8px;
+    font-size: 12px;
+}
+
+// 列表顶部操作条
+.bar-top-icon{
+    background: url('../images/page-icon.png');
+    background-size: p(835) p(679);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: relative;
+    top: 2px;
+    margin-right: 4px;
+}
+.del-bar-icon{
+    background-position: -84px -62px;
+    top: 0;
+}
+.import-bar-icon{
+    background-position: -84px -89px;
+}
+.download-bar-icon{
+    background-position: -84px -114px;
+}
+.filter-bar-icon{
+    background-position: -81px -147px;
+}
+
+
+// 自定义卡片
+.card-checkbox{
+    margin: 8px;
+}
+
+//搜索框
+.search{
+    &.border-bottom-1px{
+        @include border-bottom-1px($searchBorderColor);
+    }
+    .el-input__inner{
+       background: transparent;
+       border: none;
+       color: $fontColor;
+   }
+   i{
+       color: $searchFontColor;
+   }
+   ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+       color: $searchFontColor;
+   }
+   :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+       color: $searchFontColor;
+   }
+   ::-moz-placeholder { /* Mozilla Firefox 19+ */
+       color: $searchFontColor;
+   }
+   :-ms-input-placeholder { /* Internet Explorer 10-11 */
+       color: $searchFontColor;
+   }
+}
+
+// 导航条
+.nav{
+    .el-submenu__title:hover{
+       background: transparent;
+    }
+    .el-submenu__title{
+        padding-left: 50px !important;
+    }
+    .el-menu-item>span{
+        padding-left: 30px !important;
+    }
+    .el-submenu{
+        .el-menu{
+            background: transparent;
+            .el-menu-item{
+                min-width: auto;
+                &:hover{
+                    background: #18223a; 
+                } 
+            }
+        }
+    }
+    .el-submenu__title i{
+        color: #fff;
+        right: 15px;
+        margin-top: -4px;
+    }
+    .el-menu--collapse{
+        width: 100%;
+    }
+    .el-tooltip__popper{
+        display: none;
+    }
+    .el-submenu__title .el-submenu__icon-arrow{
+        position: static;
+        margin-left: 8px;
+        margin-top: 4px
+    }
+}
+.el-menu--popup-right-start{
+    background:#3e4d5c !important;
+    li{
+        min-height: auto;
+        height: 30px;
+        line-height: 30px;
+        &:hover{
+            background:#fff !important;
+        }
+    }
+}
+.el-menu--vertical{
+    margin-top: 10px;
+}
+.el-menu--popup-right-start li:hover{
+    background:#3e4d5c !important;
+}
+
+// 弹窗
+.el-dialog__header{
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 20px 6px;
+    .el-dialog__title{
+        font-size: 14px;
+        color: $activeColor;
+        padding-left: 11px;
+        border-left: 2px solid $activeColor;
+        position: relative;
+        left: -10px;
+    }
+    .el-dialog__headerbtn{
+        top: 12px;
+    }
+}
+.el-dialog__body{
+    padding: 12px 6px;
+}
+
+// 分页
+.pagination-box{
+    text-align: right;
+    .page-simple{
+        background: $bgColor;
+        font-size: 12px;
+    }
+    .prev-btn,.next-btn{
+        border: 1px solid $borderColor;
+        color: $activeColor;
+        font-size: 14px;
+    }
+}
+
+// 操作条样式
+.info-metro{
+    background: $cardBgColor;
+    padding: 0 16px;
+    z-index: 2;
+}
